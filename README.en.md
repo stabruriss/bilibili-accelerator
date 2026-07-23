@@ -6,14 +6,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-00aeec.svg)](LICENSE)
 [![Install userscript](https://img.shields.io/badge/Install-userscript-00aeec.svg)](https://raw.githubusercontent.com/stabruriss/bilibili-accelerator/main/bilibili-accelerator.user.js)
 
-A Bilibili video-routing userscript designed for overseas network
-environments. During a safe playback-buffer window, it benchmarks real signed
-media ranges from the current video, then safely reorders Bilibili's native CDN
-primary and fallback routes the next time a play URL appears.
+This is a userscript for the frustrating case where your connection is fast
+enough, but Bilibili video playback still stutters or buffers.
 
-> A privacy-friendly userscript that benchmarks real signed Bilibili media
-> ranges and safely reorders native CDN routes. It never fabricates Akamai
-> signatures and never uploads telemetry.
+- Includes four commonly useful CDN routes and accelerates playback by
+  switching the video CDN.
+- Benchmarks routes automatically and can select the best-performing CDN.
+- Lets you choose a CDN manually or turn automatic testing on and off.
+- Select “Bilibili Original” to disable route switching and restore Bilibili's
+  untouched play URLs.
 
 This project is not affiliated with or officially endorsed by Bilibili.
 
@@ -122,8 +123,9 @@ The userscript uses `@grant none` and matches only:
 - `https://m.bilibili.com/*`
 
 It sends small Range requests to Bilibili's native CDNs and the built-in
-official UPOS candidates. In `localStorage`, it stores only route names,
-aggregated speeds, success states, and timestamps.
+official UPOS candidates. In `localStorage`, it stores only the selected mode,
+the automatic-testing preference, launcher coordinates, and per-host summaries
+of attempts, speeds, TTFB, worst completion time, and timestamps.
 
 Do not paste complete media URLs into an issue. They may contain short-lived
 signatures or other sensitive parameters. Keep only the hostname and remove

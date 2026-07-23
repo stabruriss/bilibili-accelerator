@@ -6,13 +6,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-00aeec.svg)](LICENSE)
 [![Install userscript](https://img.shields.io/badge/Install-userscript-00aeec.svg)](https://raw.githubusercontent.com/stabruriss/bilibili-accelerator/main/bilibili-accelerator.user.js)
 
-一个面向海外网络环境的 B站视频线路 userscript。它会在安全的播放缓冲
-窗口内实测当前视频的真实签名分片，并在下一次播放地址出现时安全重排
-B站原生 CDN 主备线路。
+这是一个油猴脚本，用来解决观看 B站时明明网速够，视频却仍然卡顿的问题。
 
-> A privacy-friendly userscript that benchmarks real signed Bilibili media
-> ranges and safely reorders native CDN routes. It never fabricates Akamai
-> signatures and never uploads telemetry.
+- 内置 4 条常用 CDN 线路，通过切换 CDN 改善视频播放。
+- 内置自动测速，可以自动选择当前表现最佳的 CDN。
+- 支持手动指定 CDN，也可以随时开关自动测速。
+- 选择「B站原始」即可关闭线路切换，恢复 B站原始播放地址。
 
 本项目与哔哩哔哩（Bilibili）无隶属或官方合作关系。
 
@@ -98,7 +97,8 @@ Userscript 使用 `@grant none`，只匹配：
 - `https://m.bilibili.com/*`
 
 它会向 B站原生 CDN 及内置的官方 UPOS 候选发送小型 Range 请求。
-本地仅在 `localStorage` 保存线路名、汇总速度、成功状态和时间戳。
+本地仅在 `localStorage` 保存线路选择、自动测速偏好、入口坐标，以及按
+host 汇总的成功次数、测速速度、TTFB、最差耗时和时间戳。
 
 提交 issue 时请勿粘贴完整媒体 URL。URL 可能包含短期签名或其他敏感参数；
 请只保留 hostname，并涂掉 query string。
