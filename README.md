@@ -20,7 +20,8 @@
 1. 安装 [Tampermonkey](https://www.tampermonkey.net/)。
 2. 点击
    **[安装 Bilibili Accelerator](https://raw.githubusercontent.com/stabruriss/bilibili-accelerator/main/bilibili-accelerator.user.js)**。
-3. 如果已经安装其他会改写 B站 CDN 地址的脚本，请先禁用它们。
+3. 如果已经安装旧版 `Bilibili Auto CDN - Stable`，或其他会改写 B站
+   CDN 地址的脚本，请先禁用它们。
 4. 打开或刷新任意 B站视频页。
 
 脚本带有 `@updateURL`，Tampermonkey 可以从本仓库的 `main` 分支检查更新。

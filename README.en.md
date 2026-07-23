@@ -23,7 +23,8 @@ This project is not affiliated with or officially endorsed by Bilibili.
 1. Install [Tampermonkey](https://www.tampermonkey.net/).
 2. Click
    **[Install Bilibili Accelerator](https://raw.githubusercontent.com/stabruriss/bilibili-accelerator/main/bilibili-accelerator.user.js)**.
-3. Disable any other userscript that rewrites Bilibili CDN addresses.
+3. Disable the legacy `Bilibili Auto CDN - Stable` script, along with any
+   other userscript that rewrites Bilibili CDN addresses.
 4. Open or refresh any Bilibili video page.
 
 The script includes an `@updateURL`, so Tampermonkey can check the repository's
