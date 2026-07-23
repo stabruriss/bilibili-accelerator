@@ -1,0 +1,78 @@
+name: Bug report
+description: 报告可复现的脚本问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿粘贴完整媒体 URL、cookie 或 token。只保留 hostname，并删除 query string。
+
+  - type: input
+    id: version
+    attributes:
+      label: Script version
+      placeholder: "0.2.5"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: 浏览器、userscript 管理器、操作系统、国家/地区和运营商
+      placeholder: "Chrome 140, Tampermonkey, macOS, US / Xfinity"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: route
+    attributes:
+      label: Selected route
+      options:
+        - 自动选择
+        - B站原始
+        - Cosov
+        - 原生 Akamai
+        - Aliov
+        - 香港 EQ
+        - 其他或不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: 描述现象、预期行为和发生频率
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 播放到……
+    validations:
+      required: true
+
+  - type: textarea
+    id: sanitized
+    attributes:
+      label: Sanitized diagnostics
+      description: 可附 __BiliAutoCDN.status() 输出；请再次确认没有完整签名 URL 或 token
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: 我已禁用其他会改写 B站 CDN 的脚本
+          required: true
+        - label: 我已删除日志中的完整 URL、query string、cookie 和 token
+          required: true

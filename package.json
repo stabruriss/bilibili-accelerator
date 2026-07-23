@@ -1,0 +1,25 @@
+{
+  "name": "bilibili-accelerator",
+  "version": "0.2.5",
+  "private": true,
+  "description": "Safely benchmark and route Bilibili video playback across native CDN endpoints.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stabruriss/bilibili-accelerator.git"
+  },
+  "scripts": {
+    "check": "node --check bilibili-accelerator.user.js",
+    "test": "node --test bilibili-accelerator.test.js",
+    "ci": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "bilibili",
+    "cdn",
+    "tampermonkey",
+    "userscript"
+  ]
+}

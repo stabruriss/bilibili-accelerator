@@ -1,0 +1,35 @@
+name: Feature request
+description: 提议新的线路、策略或界面改进
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: 你希望解决什么实际问题？
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: 描述建议行为以及为什么适合放进脚本
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: 你试过哪些替代办法？
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: 我没有附上完整签名媒体 URL、cookie 或 token
+          required: true
