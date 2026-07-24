@@ -15,6 +15,10 @@
 
 本项目与哔哩哔哩（Bilibili）无隶属或官方合作关系。
 
+## 截图
+
+![Bilibili Accelerator 在 B站视频页的线路控制面板](docs/images/control-panel.png)
+
 ## 安装
 
 1. 安装 [Tampermonkey](https://www.tampermonkey.net/)。

@@ -18,6 +18,10 @@ enough, but Bilibili video playback still stutters or buffers.
 
 This project is not affiliated with or officially endorsed by Bilibili.
 
+## Screenshot
+
+![Bilibili Accelerator route control panel on a Bilibili video page](docs/images/control-panel.png)
+
 ## Installation
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/).
